@@ -100,8 +100,8 @@ public class AddressBook {
 
     // Enhancement
     private static final String COMMAND_IMPORT_WORD = "import";
-    private static final String COMMAND_IMPORT_DESC = "Import multiple people to the address book from a formatted csv (E.G. John Doe p/98765432 e/johnd@gmail.com, Mary Sue p/1234578 e/marysue@gmail.com)";
-    private static final String COMMAND_IMPORT_EXAMPLE = COMMAND_IMPORT_WORD + " contacts.csv";
+    private static final String COMMAND_IMPORT_DESC = "Import multiple people to the address book from a formatted text file (E.G. John Doe p/98765432 e/johnd@gmail.com, Mary Sue p/1234578 e/marysue@gmail.com)";
+    private static final String COMMAND_IMPORT_EXAMPLE = COMMAND_IMPORT_WORD + " contact.txt";
 
     private static final String COMMAND_FIND_WORD = "find";
     private static final String COMMAND_FIND_DESC = "Finds all persons whose names contain any of the specified "
@@ -373,6 +373,8 @@ public class AddressBook {
         switch (commandType) {
             case COMMAND_ADD_WORD:
                 return executeAddPerson(commandArgs);
+            case COMMAND_IMPORT_WORD:
+                return executeImportPerson(commandArgs);
             case COMMAND_FIND_WORD:
                 return executeFindPersons(commandArgs);
             case COMMAND_LIST_WORD:
@@ -442,6 +444,24 @@ public class AddressBook {
     private static String getMessageForSuccessfulAddPerson(HashMap<String, String> addedPerson) {
         return String.format(MESSAGE_ADDED,
                 getNameFromPerson(addedPerson), getPhoneFromPerson(addedPerson), getEmailFromPerson(addedPerson));
+    }
+
+    /**
+     * Import a text file (specified by the command args) to the address book.
+     * The entire command arguments string is treated as a string representation of the person to add.
+     *
+     * @param commandArgs full command args string from the user
+     * @return feedback display message for the operation result
+     */
+    private static String executeImportPerson(String commandArgs) {
+        String msg = "";
+        ArrayList<HashMap<String, String>> imported = loadPersonsFromFile(commandArgs);
+        for(int i = 0; i < imported.size(); i++){
+            addPersonToAddressBook(imported.get(i));
+            msg += getMessageForSuccessfulAddPerson(imported.get(i)) + LS;
+        }
+        
+        return msg;
     }
 
     /**
