@@ -1,0 +1,2 @@
+John Doe p/98765432 e/johnd@gmail.com, 
+Mary Sue p/1234578 e/marysue@gmail.com

@@ -55,6 +55,9 @@
 || 	Parameters: NAME p/PHONE_NUMBER e/EMAIL
 || 	Example: add John Doe p/98765432 e/johnd@gmail.com
 || 
+|| import: Import multiple people to the address book from a formatted text file (E.G. John Doe p/98765432 e/johnd@gmail.com, Mary Sue p/1234578 e/marysue@gmail.com)
+|| 	Example: import contact.txt
+|| 
 || find: Finds all persons whose names contain any of the specified keywords (case-sensitive) and displays them as a list with index numbers.
 || 	Parameters: KEYWORD [MORE_KEYWORDS]
 || 	Example: find alice bob charlie
@@ -171,6 +174,22 @@
 || 
 || 5 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  import contact.txt]
+|| New person added: John Doe, Phone: 98765432, Email: johnd@gmail.com,
+|| New person added: Mary Sue, Phone: 1234578, Email: marysue@gmail.com
+|| 
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
+|| 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	6. John Doe  Phone Number: 98765432  Email: johnd@gmail.com,
+|| 	7. Mary Sue  Phone Number: 1234578  Email: marysue@gmail.com
+|| 
+|| 7 persons found!
+|| ===================================================
 || Enter command: || [Command entered:  find]
 || 
 || 0 persons found!
@@ -246,8 +265,10 @@
 || 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 || 	3. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
 || 	4. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
+|| 	5. John Doe  Phone Number: 98765432  Email: johnd@gmail.com,
+|| 	6. Mary Sue  Phone Number: 1234578  Email: marysue@gmail.com
 || 
-|| 4 persons found!
+|| 6 persons found!
 || ===================================================
 || Enter command: || [Command entered:  delete 4]
 || Deleted Person: Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
@@ -256,8 +277,10 @@
 || 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 || 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 || 	3. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	4. John Doe  Phone Number: 98765432  Email: johnd@gmail.com,
+|| 	5. Mary Sue  Phone Number: 1234578  Email: marysue@gmail.com
 || 
-|| 3 persons found!
+|| 5 persons found!
 || ===================================================
 || Enter command: || [Command entered:  delete 1]
 || Deleted Person: Adam Brown  Phone Number: 111111  Email: adam@gmail.com
@@ -265,8 +288,10 @@
 || Enter command: || [Command entered:  list]
 || 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 || 	2. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	3. John Doe  Phone Number: 98765432  Email: johnd@gmail.com,
+|| 	4. Mary Sue  Phone Number: 1234578  Email: marysue@gmail.com
 || 
-|| 2 persons found!
+|| 4 persons found!
 || ===================================================
 || Enter command: || [Command entered:  clear]
 || Address book has been cleared!
